@@ -1,27 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import Image from "next/image";
+import axios from "axios";
 
 const Candidate = () => {
-	const data = {
-		labels: ["Score"],
-		datasets: [{
-			label: "ชัชชาติ",
-			data: [1000],
-		},
-		{
-			label: "ตู่ๆ",
-			data: [11],
-		}
-	]
-	}
+	const [party, setParty] = useState([])
 
-	const options = {
-		responsive: true
-	}
+	useEffect(() => {
+    axios.get("http://localhost:8000/parties")
+    .then(response => response.data)
+    .then(data => {console.log(data);setParty(data)})
+  },[])
 
-  return (
+	return (
     <div className={styles.container}>
       <Head>
         <title>Score for each candidate</title>
@@ -30,17 +22,17 @@ const Candidate = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Score for each candidate</h1>
         
-				{[...Array(10).keys()].map(i => i + 1).map(i => 
-					<div className={styles.grid} key={i}>
+				{party.map(p => 
+					<div className={styles.grid} key={p.id}>
 						<div className={styles.card}>
 							<Image 
-								src="https://ih1.redbubble.net/image.430094232.0384/flat,800x800,075,f.u2.jpg" 
-								alt="Dog"
+								src={p.pictureUrl} 
+								alt={"party" + p.id}
 								width={100}
 								height={100}/>
-							<p>อันดับ {i}</p>
-							<h2>พรรคหมา</h2>
-							<p>คะแนนรวม {Math.floor(100 / i)} เสียง</p>
+							<p>อันดับ {p.id}</p>
+							<h2>{p.name}</h2>
+							<p>คะแนนรวม {Math.floor(100 / p.id)} เสียง</p>
 						</div>
 					</div>)}
 				

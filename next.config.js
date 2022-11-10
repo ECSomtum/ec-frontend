@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["ih1.redbubble.net"]
+    domains: ["ih1.redbubble.net", "www.coindesk.com"]
   },
 };
 
