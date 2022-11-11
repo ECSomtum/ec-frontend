@@ -26,10 +26,9 @@ export default function Home() {
             <h2>Score for each candidate &rarr;</h2>
           </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>More dashboard coming soon &rarr;</h2>
-            <p>Stay tuned</p>
-          </a>
+          <Link href="/charts/mostvoted" className={styles.card}>
+            <h2>Most voted candidate in selected section &rarr;</h2>
+          </Link>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>More dashboard coming soon &rarr;</h2>
