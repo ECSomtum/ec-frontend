@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import axios from "axios";
+import Link from 'next/link'
 import { WhoCaresAboutNamingThingsBro } from "../../utils/utils";
 import { LocationNaja } from "../../utils/utils";
 import { CircularProgress } from "@mui/material";
@@ -43,12 +44,12 @@ const Location = () => {
           <h1 className={styles.title}>Most voted candidate in selected section</h1>
 
           {location.map((p) => (
-            <div className={styles.grid} key={p.locationId}>
+            <Link href={`/charts/${p.locationId}`} className={styles.grid} key={p.locationId} >
               <div className={styles.card}>
-                <p>ลำดับ {p.locationId}</p>
+                <p>เขตที่ {p.locationId}</p>
                 <h2>{p.locationName}</h2>
               </div>
-            </div>
+            </Link>
           ))}
         </main>
       </div>
