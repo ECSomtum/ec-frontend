@@ -1,6 +1,6 @@
 // This file contain all the functions idk where to put aka trash can
 
-export const useToBeSomethingButNowWeAreJustStranger = () => [{
+export const WhoCaresAboutNamingThingsBro = () => [{
     id: 1,
     name: "พรรคเถอะ",
     pictureUrl: "https://pbs.twimg.com/media/FKqC7jLUcAUAvTy.jpg"

@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import axios from "axios";
-import { useToBeSomethingButNowWeAreJustStranger } from "../../utils/utils";
+import { WhoCaresAboutNamingThingsBro } from "../../utils/utils";
 
 const Candidate = () => {
 	const [party, setParty] = useState([])
@@ -13,7 +13,7 @@ const Candidate = () => {
     .then(response => response.data)
     .then(data => setParty(data))
 	.catch(_ => {
-		const mockParty = useToBeSomethingButNowWeAreJustStranger()
+		const mockParty = WhoCaresAboutNamingThingsBro()
 		setParty(mockParty)
 	})
   },[])
