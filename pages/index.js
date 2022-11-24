@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import InfoCandidate from './InfoCandidate'
-
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
+import InfoCandidate from "./InfoCandidate";
 
 export default function Home() {
   return (
@@ -14,16 +13,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Live Election Dashboard
-        </h1>
+        <h1 className={styles.title}>Live Election Dashboard</h1>
 
-        <p className={styles.description}>  
+        <p className={styles.description}>
           Find different election dashboards below
         </p>
 
         <div className={styles.grid}>
-          <Link href="/charts/candidate" className={styles.card}>
+          <Link href="/charts/party" className={styles.card}>
             <h2>Score for each candidate &rarr;</h2>
           </Link>
 
@@ -49,12 +46,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

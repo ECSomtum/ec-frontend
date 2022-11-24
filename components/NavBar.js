@@ -11,8 +11,8 @@ const NavBar = () => {
             <Link href="/">Live Election Dashboard</Link>
           </li>
           <li>
-            <Link href="/charts/candidate">
-              Score for each candidate
+            <Link href="/charts/party">
+              Score for each party
             </Link>
           </li>
           <li>
