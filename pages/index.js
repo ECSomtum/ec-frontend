@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import InfoCandidate from './InfoCandidate'
 
 export default function Home() {
   return (
@@ -26,10 +27,9 @@ export default function Home() {
             <h2>Score for each candidate &rarr;</h2>
           </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>More dashboard coming soon &rarr;</h2>
-            <p>Stay tuned</p>
-          </a>
+          <Link href="/InfoCandidate" className={styles.card}>
+            <h2>Candidate Information &rarr;</h2>
+          </Link>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>More dashboard coming soon &rarr;</h2>
@@ -55,6 +55,9 @@ export default function Home() {
           </span>
         </a>
       </footer>
+      <div>
+        <InfoCandidate />
+      </div>
     </div>
   )
 }
