@@ -20,3 +20,24 @@ export const WhoCaresAboutNamingThingsBro = () => [{
     name: "พรรคนี้ขี้เกียจไปนะ",
     pictureUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi0dTD83ZvTXODTcLwDFBljMiO94Y4BTjDig&usqp=CAU"
 },]
+
+export const LocationNaja = () => [{
+    locationId : 1,
+    locationName : "พระนคร"
+  },
+  {
+    locationId : 2,
+    locationName : "ดุสิต"
+  },
+  {
+    locationId : 3,
+    locationName : "หนองจอก"
+  },
+  {
+    locationId : 4,
+    locationName : "บางรัก"
+  },
+  {
+    locationId : 5,
+    locationName : "บางเขน"
+  },]
