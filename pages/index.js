@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import InfoCandidate from './InfoCandidate'
 
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -12,7 +13,6 @@ export default function Home() {
         <meta name="description" content="my web yey" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Live Election Dashboard
@@ -55,9 +55,6 @@ export default function Home() {
           </span>
         </a>
       </footer>
-      <div>
-        <InfoCandidate />
-      </div>
     </div>
   )
 }
