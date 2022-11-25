@@ -2,9 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import InfoCandidate from "./InfoCandidate";
 
-export default function Home() {
+const Party = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>All Election Dashboard</h1>
+        <h1 className={styles.title}>Dashboard for Party Election</h1>
 
         <p className={styles.description}>
           Find different election dashboards below
@@ -23,17 +22,11 @@ export default function Home() {
           <Link href="/charts/party" className={styles.card}>
             <h2>Score for each party &rarr;</h2>
           </Link>
+        </div>
 
-          <Link href="/charts/mostvoted" className={styles.card}>
-            <h2>Most voted party in each section &rarr;</h2>
-          </Link>
-
-          <Link href="/charts/candidate" className={styles.card}>
-            <h2>Score for each candidate &rarr;</h2>
-          </Link>
-
-          <Link href="/charts/mostvoted/candidate" className={styles.card}>
-            <h2>Most voted candidate in each area &rarr;</h2>
+        <div className={styles.grid}>
+          <Link href="/charts/mostvoted/party" className={styles.card}>
+            <h2>Most voted party in each area &rarr;</h2>
           </Link>
         </div>
       </main>
@@ -53,3 +46,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Party

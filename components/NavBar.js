@@ -8,16 +8,16 @@ const NavBar = () => {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link href="/">Live Election Dashboard</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/charts/party">
-              Score for each party
+            <Link href="/party">
+              Party
             </Link>
           </li>
           <li>
-            <Link href="/InfoCandidate">
-              Candidate Information
+            <Link href="/candidate">
+              Candidate
             </Link>
             
           </li>

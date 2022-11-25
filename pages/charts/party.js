@@ -37,7 +37,7 @@ const Party = ({ initialParty, initialScore }) => {
               />
               <h2>{p.name}</h2>
               <p>
-                คะแนนรวม <strong>{score[p.id]}</strong> เสียง
+              <strong>Score:</strong> {score[p.id] ?? 0}
               </p>
             </div>
           ))}

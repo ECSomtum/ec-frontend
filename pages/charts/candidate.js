@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../../styles/Party.module.css";
 import Image from "next/image";
-import { getCandidates, getParty, getScoreMP } from "../../services/ec";
+import { getCandidates, getParty, getPopulationStatistics, getScoreMP } from "../../services/ec";
 
-const Candidate = ({ initialCandidates, initialParty, initialScore }) => {
+const Candidate = ({ initialCandidates, initialParty, initialScore, initialLocation }) => {
   const [candidates, setCandidates] = useState(initialCandidates)
   
   const setCandidateWithParty = (initialCandidates) => {
@@ -13,9 +13,14 @@ const Candidate = ({ initialCandidates, initialParty, initialScore }) => {
         p => candidate.party_id === p.id
       );
 
-      return candidateParty.length > 0 ? {
+      const candidateLocation = initialLocation.filter(
+        l => l.LocationID === candidate.area_id
+      )
+
+      return candidateParty.length > 0 && candidateLocation.length > 0 ? {
         ...candidate,
         partyName: candidateParty[0].name,
+        location: candidateLocation[0].Location,
       } : { ...candidate, partyName: "", partyPictureUrl: ""};
     });
 
@@ -35,11 +40,11 @@ const Candidate = ({ initialCandidates, initialParty, initialScore }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Score for each candidate</title>
+        <title>Score for all candidates</title>
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Score for each candidate</h1>
+        <h1 className={styles.title}>Score for all candidates</h1>
 
         <div className={styles.grid}>
           {candidates.map((p, i) => (
@@ -51,9 +56,10 @@ const Candidate = ({ initialCandidates, initialParty, initialScore }) => {
                 height={100}
               />
               <h2>{p.name}</h2>
-              <h3>{p.partyName}</h3>
+              <p><strong>Party:</strong> {p.partyName}</p>
+              <p><strong>Area:</strong> {p.location}</p>
               <p>
-                คะแนนรวม <strong>{initialScore[p.id] ?? 0}</strong> เสียง
+                <strong>Score:</strong> {initialScore[p.id] ?? 0}
               </p>
             </div>
           ))}
@@ -67,12 +73,14 @@ export async function getServerSideProps() {
   const candidates = await getCandidates();
   const party = await getParty();
   const score = await getScoreMP();
+  const location = await getPopulationStatistics();
 
   return {
     props: {
       initialParty: party,
       initialCandidates: candidates,
-      initialScore: score
+      initialScore: score,
+      initialLocation: location
     }
   }
 }
