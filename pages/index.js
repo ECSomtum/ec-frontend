@@ -21,7 +21,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <Link href="/charts/party" className={styles.card}>
-            <h2>Score for each candidate &rarr;</h2>
+            <h2>Score for each party &rarr;</h2>
           </Link>
 
           <Link href="/InfoCandidate" className={styles.card}>
