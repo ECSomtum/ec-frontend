@@ -24,7 +24,7 @@ export default function Home() {
             <h2>Score for each party &rarr;</h2>
           </Link>
 
-          <Link href="/charts/mostvoted" className={styles.card}>
+          <Link href="/charts/mostvoted/party" className={styles.card}>
             <h2>Most voted party in each section &rarr;</h2>
           </Link>
 
