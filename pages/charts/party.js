@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "../../styles/Party.module.css";
 import Image from "next/image";
-import axios from "axios";
+import { getParty, getScoreParty } from "../../services/ec";
 
 const Party = ({ initialParty, initialScore }) => {
   const [party, setParty] = useState(initialParty);
@@ -47,17 +47,9 @@ const Party = ({ initialParty, initialScore }) => {
   );
 };
 
-const getParty = () => {
-  return axios.get("https://somtum-backend.herokuapp.com/party").then(res => res.data);
-};
-
-const getScore = () => {
-  return axios.get("https://somtum-backend.herokuapp.com/score/party").then(res => res.data);
-};
-
 export async function getServerSideProps() {
   const party = await getParty();
-  const score = await getScore();
+  const score = await getScoreParty();
   return {
     props: {
       initialParty: party,

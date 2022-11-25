@@ -1,9 +1,9 @@
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import axios from "axios";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Info from "../components/Info";
+import { getCandidates, getParty } from "../services/ec";
 
 const InfoCandidate = ({ initialParty, initialCandidates }) => {
   const [candidates, setCandidates] = useState(initialCandidates);
@@ -43,14 +43,6 @@ const InfoCandidate = ({ initialParty, initialCandidates }) => {
     </Box>
   );
 };
-
-const getParty = () =>
-  axios.get("https://somtum-backend.herokuapp.com/party").then((response) => response.data);
-
-const getCandidates = () =>
-  axios
-    .get("https://somtum-backend.herokuapp.com/candidates")
-    .then((response) => response.data);
 
 export async function getServerSideProps() {
   const party = await getParty();
