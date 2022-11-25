@@ -35,6 +35,10 @@ export default function Home() {
           <Link href="/charts/mostvoted/candidate" className={styles.card}>
             <h2>Most voted candidate in each area &rarr;</h2>
           </Link>
+
+          <Link href="/charts/voteleft" className={styles.card}>
+            <h2>Number of people vote in all area &rarr;</h2>
+          </Link>
         </div>
       </main>
 
