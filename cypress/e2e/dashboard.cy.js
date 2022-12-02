@@ -3,12 +3,12 @@ describe('ec dashboard', () => {
     cy.visit('http://localhost:3000')
   })
 
-  it('render homepage text and below text', () =>{
+  it('render homepage text and the text below', () =>{
     cy.contains('All Election Dashboard').should('be.visible')
     cy.contains('Find different election dashboards below').should('be.visible')
   })
   
-  it('render the card links', () =>{
+  it('render the homepage card', () =>{
     cy.get('a').contains('Score for each party')
     cy.get('a').contains('Most voted party in each section')
     cy.get('a').contains('Score for each candidate')
