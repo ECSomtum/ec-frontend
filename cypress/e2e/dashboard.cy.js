@@ -3,11 +3,12 @@ describe('ec dashboard', () => {
     cy.visit('http://localhost:3000')
   })
 
-  it('render homepage text', () =>{
+  it('render homepage text and the text below', () =>{
     cy.contains('All Election Dashboard').should('be.visible')
+    cy.contains('Find different election dashboards below').should('be.visible')
   })
   
-  it('render the card links', () =>{
+  it('render the homepage card', () =>{
     cy.get('a').contains('Score for each party')
     cy.get('a').contains('Most voted party in each section')
     cy.get('a').contains('Score for each candidate')
@@ -34,13 +35,13 @@ describe('ec dashboard', () => {
 
   it('all card links are avaiable', () => {
     cy.contains('Score for each party').click()
-    cy.contains('Score:').should('be.visible')
+    cy.contains('Score for each party').should('be.visible')
     cy.contains('Home').click()
     cy.contains('Most voted party in each section').click()
     cy.contains('Select each area to see each party score in the area').should('be.visible')
     cy.contains('Home').click()
-    cy.contains('Most voted candidtae in each area').click()
-    cy.contains('Select each area to see each candidate score in the area').should('be.visible')
+    cy.contains('Most voted candidate in each area').click()
+    cy.contains('Most voted candidate in each area').should('be.visible')
     cy.contains('Home').click()
     cy.contains('Most voted candidate in each area').click()
     cy.contains('Select each area to see each candidate score in the area').should('be.visible')
