@@ -3,8 +3,9 @@ describe('ec dashboard', () => {
     cy.visit('http://localhost:3000')
   })
 
-  it('render homepage text', () =>{
+  it('render homepage text and below text', () =>{
     cy.contains('All Election Dashboard').should('be.visible')
+    cy.contains('Find different election dashboards below').should('be.visible')
   })
   
   it('render the card links', () =>{
