@@ -35,13 +35,13 @@ describe('ec dashboard', () => {
 
   it('all card links are avaiable', () => {
     cy.contains('Score for each party').click()
-    cy.contains('Score:').should('be.visible')
+    cy.contains('Score for each party').should('be.visible')
     cy.contains('Home').click()
     cy.contains('Most voted party in each section').click()
     cy.contains('Select each area to see each party score in the area').should('be.visible')
     cy.contains('Home').click()
-    cy.contains('Most voted candidtae in each area').click()
-    cy.contains('Select each area to see each candidate score in the area').should('be.visible')
+    cy.contains('Most voted candidate in each area').click()
+    cy.contains('Most voted candidate in each area').should('be.visible')
     cy.contains('Home').click()
     cy.contains('Most voted candidate in each area').click()
     cy.contains('Select each area to see each candidate score in the area').should('be.visible')
